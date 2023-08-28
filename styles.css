@@ -2,30 +2,67 @@ body, h1, h2, h3, p, ul, li {
     margin: 0;
     padding: 0;
     list-style: none;
+    font-family: Arial, sans-serif;
 }
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #EEEEEE;
     color: #333;
 }
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    justify-content: start;
+    align-items: center;
 }
 
-.header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
+header {
+    position: fixed;   /* ヘッダーを画面上部に固定 */
+    top: 0;
+    left: 0;
+    width: 100%;      /* ヘッダーを画面幅全体に広げます */
+    height: auto;     /* ヘッダーの高さは自動的に調整 */
+    background-color: #333;   /* 任意の背景色を選べます */
+    z-index: 1000;     /* ヘッダーを他の要素より前面に表示 */
+}
+#logo-text {
+    font-size: 134px;  /* テキストのサイズ */
+    color: #FFF;      /* テキストの色 */
+    padding: 10px 20px; /* 上下左右の間隔を設定 */
 }
 
-.main-content {
-    padding: 20px;
-    background-color: #fff;
+main {
+    padding-top: 160px;  /* ヘッダーの下にコンテンツを表示。この値はテキストの大きさやパディングに応じて調整してください */
+}
+
+.image-group {
+    margin: 44px;
+}
+
+.long-images {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 44px;
+}
+
+.square-images {
+    display: flex;
+    justify-content: space-between;
+}
+
+img {
+    vertical-align: top;  /* 画像の上端を揃える */
+}
+
+.square {
+    width: 382px;
+    height: 382px;
+}
+
+.rectangle {
+    width: 382px;
+    height: 808px;
 }
 
 .footer {
