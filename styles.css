@@ -1,14 +1,22 @@
 body, h1, h2, h3, p, ul, li {
-    margin: 0;
     padding: 0;
     list-style: none;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: #EEEEEE;
     color: #333;
+}
+
+a {
+    color: black;     /* テキスト色を黒に設定 */
+    text-decoration: none;  /* アンダーラインを削除 */
+}
+a:hover {
+    text-decoration: underline;  /* ホバー時にアンダーラインを表示 */
+    text-decoration-color: #13EFA0; /* アンダーラインの色を赤に設定 */
 }
 
 .container {
@@ -23,17 +31,25 @@ header {
     left: 0;
     width: 100%;      /* ヘッダーを画面幅全体に広げます */
     height: auto;     /* ヘッダーの高さは自動的に調整 */
-    background-color: #333;   /* 任意の背景色を選べます */
     z-index: 1000;     /* ヘッダーを他の要素より前面に表示 */
 }
+
 #logo-text {
-    font-size: 134px;  /* テキストのサイズ */
-    color: #FFF;      /* テキストの色 */
-    padding: 10px 20px; /* 上下左右の間隔を設定 */
+    font-size: 134px;
+    margin-top:-20px;
+    color:#13EFA0;
+    letter-spacing:-0.4rem;
+}
+
+@media (max-width: 900px) {
+    #logo-text  {
+        font-size: 90px;
+        margin: 0;
+    }
 }
 
 main {
-    padding-top: 160px;  /* ヘッダーの下にコンテンツを表示。この値はテキストの大きさやパディングに応じて調整してください */
+    padding-top: 70px;  /* ヘッダーの下にコンテンツを表示。この値はテキストの大きさやパディングに応じて調整してください */
 }
 
 .image-group {
@@ -53,16 +69,23 @@ main {
 
 img {
     vertical-align: top;  /* 画像の上端を揃える */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s; /* アニメーションの追加 */
+    filter: grayscale(100%) invert(86%);
+}
+
+img:hover {
+    filter: grayscale(0%); /* マウスオーバー時にモノクロを解除する */
 }
 
 .square {
-    width: 382px;
-    height: 382px;
+    width: 30%;
 }
 
 .rectangle {
-    width: 382px;
-    height: 808px;
+    width: 70%;
 }
 
 .footer {
@@ -81,4 +104,111 @@ img {
     border-radius: 4px;
     text-decoration: none;
     transition: background-color 0.3s ease;
+
+
+
+}
+.flex_box {
+    padding:  10px;             /* 余白指定 */
+    display: flex;              /* フレックスボックスにする */
+    align-items:stretch;        /* 縦の位置指定 */
+    flex-direction:row;         /* 要素の並び順 */
+    flex-wrap: wrap;            /* 折り返し指定 子要素を折り返し、上から下への順で配置*/
+    align-content:flex-start;      /* 折り返し時の配置指定 */
+    justify-content:space-between;
+}
+
+.flex_item {
+    flex-basis: 30%;
+    padding: 10px;
+    color:  #fff;               /* 文字色 */
+    margin:  10px;              /* 外側の余白 */
+    border-radius:  5px;        /* 角丸指定 */
+}
+
+.grid {
+    display: grid; /* グリッドレイアウト */
+    grid-template-columns: repeat(3, 1fr);  /* 3列を等しく作成 */
+    grid-auto-rows: calc(16.05% * 1);
+}
+
+.grid_child {
+    margin: 6px;            /* 周りの余白指定 */
+}
+
+.grid_child:nth-child(1) {
+    grid-column:1/2;    /* 配置指定 */
+    grid-row:1/2;       /* 配置指定 */
+}
+
+.grid_child:nth-child(2) {
+    grid-column:2/3;    /* 配置指定 */
+    grid-row:1/2;       /* 配置指定 */
+}
+
+.grid_child:nth-child(3) {
+    grid-column:3/4;    /* 配置指定 */
+    grid-row:1/2;       /* 配置指定 */
+}
+
+.grid_child:nth-child(4) {
+    grid-column:1/2;    /* 配置指定 */
+    grid-row:2/3;       /* 配置指定 */
+}
+
+.grid_child:nth-child(5) {
+    grid-column:2/4;    /* 配置指定 */
+    grid-row:2/3;       /* 配置指定 */
+}
+
+.grid_child:nth-child(6) {
+    grid-column:1/2;    /* 配置指定 */
+    grid-row:3/4;       /* 配置指定 */
+}
+.grid_child:nth-child(7) {
+    grid-column:2/3;    /* 配置指定 */
+    grid-row:3/4;       /* 配置指定 */
+}
+.grid_child:nth-child(8) {
+    grid-column:3/4;    /* 配置指定 */
+    grid-row:3/4;       /* 配置指定 */
+}
+.grid_child:nth-child(9) {
+    grid-column:1/2;    /* 配置指定 */
+    grid-row:4/5;       /* 配置指定 */
+}
+.grid_child:nth-child(10) {
+    grid-column:2/4;    /* 配置指定 */
+    grid-row:4/5;       /* 配置指定 */
+}
+.grid_child:nth-child(11) {
+    grid-column:1/2;    /* 配置指定 */
+    grid-row:5/6;       /* 配置指定 */
+}
+.grid_child:nth-child(12) {
+    grid-column:2/3;    /* 配置指定 */
+    grid-row:5/6;       /* 配置指定 */
+}
+.grid_child:nth-child(13) {
+    grid-column:3/4;    /* 配置指定 */
+    grid-row:5/6;       /* 配置指定 */
+}
+.grid_child:nth-child(13) {
+    grid-column:1/2;    /* 配置指定 */
+    grid-row:6/7;       /* 配置指定 */
+}
+
+.centered-content {
+    width: 800px;
+    margin: 140px auto;
+    padding: 10px;
+    text-align: left; /* テキストを左揃え */
+    
+}
+
+@media (max-width: 900px) {
+    .centered-content {
+        margin: 100px 30px;
+        width: 87%;
+    }
 }
